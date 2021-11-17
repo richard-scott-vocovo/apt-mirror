@@ -18,9 +18,8 @@ RUN echo \
  && rm -f /etc/apt/mirror.list \
  && mv -f /var/spool/apt-mirror/wgetrc /etc/wgetrc \
  && mv /var/spool/apt-mirror/mirror.list /etc/apt/mirror.list \
- && mv /var/spool/apt-mirror/sites-enabled_default /etc/nginx/sites-enabled/default
-
-EXPOSE 80 
+ && mv /var/spool/apt-mirror/sites-enabled_default /etc/nginx/sites-enabled/default 
+EXPOSE 80
 
 VOLUME ["/var/spool/apt-mirror"]
 

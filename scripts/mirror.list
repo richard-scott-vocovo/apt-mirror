@@ -9,19 +9,25 @@ set cleanscript  /var/spool/apt-mirror/var/clean.sh
 # set defaultarch  <running host architecture>
 set postmirror_script /var/spool/apt-mirror/var/postmirror.sh
 # set run_postmirror 0
-set nthreads   25
+set nthreads 3
 set _tilde 0
 #set limit_rate 100k   ## Per thread ##
 #
 ############# end config ##############
 
-# http://ukdebian.mirror.anlx.net/debian/
+# Debian 10 Buster
+deb http://ukdebian.mirror.anlx.net/debian buster main contrib non-free
+deb-src http://ukdebian.mirror.anlx.net/debian buster main contrib non-free
+deb http://ukdebian.mirror.anlx.net/debian buster main/debian-installer main contrib non-free
+#deb-src http://ukdebian.mirror.anlx.net/debian buster-backports main contrib non-free
+#deb http://ukdebian.mirror.anlx.net/debian buster-backports main contrib non-free
+#deb-src http://ukdebian.mirror.anlx.net/debian buster-backports main contrib non-free
+#deb http://ukdebian.mirror.anlx.net/debian buster-updates main contrib non-free
+#deb-src http://ukdebian.mirror.anlx.net/debian buster-updates main contrib non-free
+clean http://ukdebian.mirror.anlx.net/debian
 
-deb http://192.168.99.1/debian buster main contrib non-free
-deb http://192.168.99.1/debian buster main/debian-installer main contrib non-free
 
-deb-src http://192.168.99.1/debian buster main contrib non-free
-
-# == Clean
-
-clean http://192.168.99.1/debian
+#deb http://192.168.99.1/debian buster main contrib non-free
+#deb http://192.168.99.1/debian buster main/debian-installer main contrib non-free
+#deb-src http://192.168.99.1/debian buster main contrib non-free
+#clean http://192.168.99.1/debian

@@ -2,9 +2,6 @@ server {
     listen 80 default_server;
     server_name _;
 
-    access_log /dev/stdout;
-    error_log  /dev/stdout;
-
     server_name_in_redirect off;
 
     location /debian {
