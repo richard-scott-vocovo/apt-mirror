@@ -7,7 +7,7 @@ EXPOSED_PORT="8888"
 docker stop ${CONTAINER_NAME}
 docker container rm ${CONTAINER_NAME} --force
 docker image rm ${CONTAINER_NAME} --force
-docker build . -t ${CONTAINER_NAME}:latest
+docker build ${PWD} -t ${CONTAINER_NAME}:latest
 
 if ! docker volume ls -q | egrep -q "^${CONTAINER_NAME}$" ; then
   docker volume create ${CONTAINER_NAME}
