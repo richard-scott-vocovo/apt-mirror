@@ -1,7 +1,6 @@
-#!/bin/bash -x
-cd $(dirname ${0})
-cd ..
-source ./.container_name
+#!/bin/bash
+cd $(dirname ${0})/..
+CONTAINER_NAME="$(basename ${PWD})"
 
 EXPOSED_PORT="8888"
 
