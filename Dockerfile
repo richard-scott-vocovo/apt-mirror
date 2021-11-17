@@ -3,7 +3,6 @@ FROM ubuntu:latest
 ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/London
 
-
 COPY scripts /var/spool/apt-mirror/
 
 RUN echo \
@@ -12,7 +11,6 @@ RUN echo \
  && apt-get -q -y install apt-mirror \
                           wget \
                           nginx \
-                          cron \
                           nano \
                           iproute2 \
  && apt-get -q -y clean \
@@ -20,7 +18,6 @@ RUN echo \
  && rm -f /etc/apt/mirror.list \
  && mv /var/spool/apt-mirror/mirror.list /etc/apt/mirror.list \
  && mv /var/spool/apt-mirror/sites-enabled_default /etc/nginx/sites-enabled/default
-
 
 EXPOSE 80 
 

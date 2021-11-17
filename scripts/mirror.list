@@ -15,30 +15,8 @@ set _tilde 0
 #
 ############# end config ##############
 
-
-# Debian 8 Jessie
-#deb http://ftp.uk.debian.org/debian jessie main contrib non-free
-#deb http://ftp.uk.debian.org/debian jessie main/debian-installer main contrib non-free
-deb http://ftp.uk.debian.org/debian jessie-updates main contrib non-free
-
-#deb-src http://ftp.uk.debian.org/debian jessie main contrib non-free
-#deb-src http://ftp.uk.debian.org/debian jessie-updates main contrib non-free
-
-
-# Debian 9 Stretch
-#deb http://ftp.uk.debian.org/debian stretch main contrib non-free
-#deb http://ftp.uk.debian.org/debian stretch main/debian-installer main contrib non-free
-#deb http://ftp.uk.debian.org/debian stretch-backports main contrib non-free
-#deb http://ftp.uk.debian.org/debian stretch-updates main contrib non-free
-#deb http://ftp.uk.debian.org/debian stretch-proposed-updates main contrib non-free
-
-#deb-src http://ftp.uk.debian.org/debian stretch main contrib non-free
-#deb-src http://ftp.uk.debian.org/debian stretch-backports main contrib non-free
-#deb-src http://ftp.uk.debian.org/debian stretch-updates main contrib non-free
-#deb-src http://ftp.uk.debian.org/debian stretch-proposed-updates main contrib non-free
-
-
 # Debian 10 Buster
+deb http://ftp.uk.debian.org/debian buster contrib
 #deb http://ftp.uk.debian.org/debian buster main contrib non-free
 #deb http://ftp.uk.debian.org/debian buster main/debian-installer main contrib non-free
 #deb http://ftp.uk.debian.org/debian buster-backports main contrib non-free

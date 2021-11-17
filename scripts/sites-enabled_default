@@ -7,12 +7,8 @@ server {
 
     server_name_in_redirect off;
 
-    location /ubuntu {
-        alias /var/spool/apt-mirror/mirror/archive.ubuntu.com/ubuntu;
-        autoindex on;
-    }
-    location /kali {
-        alias /var/spool/apt-mirror/mirror/http.kali.org/kali;
+    location /debian {
+        alias /var/spool/apt-mirror/mirror/ftp.uk.debian.org/debian;
         autoindex on;
     }
 
