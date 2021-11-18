@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
-ENV TZ=Europe/London
+#ENV TZ=Europe/London
 
 COPY scripts /var/spool/apt-mirror/
 
