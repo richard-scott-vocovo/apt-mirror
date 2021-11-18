@@ -13,12 +13,10 @@ if ! docker volume ls -q | egrep -q "^${CONTAINER_NAME}$" ; then
   docker volume create ${CONTAINER_NAME}
 fi
 
-docker logs --follow $(
-  docker run -d -it \
-  --name=${CONTAINER_NAME} \
-  -e TZ=Europe/London \
-  -v ${CONTAINER_NAME}:/var/spool/apt-mirror \
-  --restart unless-stopped \
-  -p ${EXPOSED_PORT}:80 \
-  ${CONTAINER_NAME}
-)
+docker run -d -it \
+ --name=${CONTAINER_NAME} \
+ -e TZ=Europe/London \
+ -v ${CONTAINER_NAME}:/var/spool/apt-mirror \
+ --restart unless-stopped \
+ -p ${EXPOSED_PORT}:80 \
+ ${CONTAINER_NAME}

@@ -16,19 +16,19 @@ set _tilde 0
 ############# end config ##############
 
 # Debian 10 Buster
-
-deb http://ukdebian.mirror.anlx.net/debian buster main contrib non-free
-deb-src http://ukdebian.mirror.anlx.net/debian buster main contrib non-free
-deb http://ukdebian.mirror.anlx.net/debian buster main/debian-installer main contrib non-free
+#deb http://ukdebian.mirror.anlx.net/debian buster main contrib non-free
+#deb-src http://ukdebian.mirror.anlx.net/debian buster main contrib non-free
+#deb http://ukdebian.mirror.anlx.net/debian buster main/debian-installer main contrib non-free
 #deb-src http://ukdebian.mirror.anlx.net/debian buster-backports main contrib non-free
 #deb http://ukdebian.mirror.anlx.net/debian buster-backports main contrib non-free
 #deb-src http://ukdebian.mirror.anlx.net/debian buster-backports main contrib non-free
 #deb http://ukdebian.mirror.anlx.net/debian buster-updates main contrib non-free
 #deb-src http://ukdebian.mirror.anlx.net/debian buster-updates main contrib non-free
-clean http://ukdebian.mirror.anlx.net/debian
+#clean http://ukdebian.mirror.anlx.net/debian
 
 
-#deb http://192.168.99.1/debian buster main contrib non-free
-#deb http://192.168.99.1/debian buster main/debian-installer main contrib non-free
-#deb-src http://192.168.99.1/debian buster main contrib non-free
-#clean http://192.168.99.1/debian
+# PXE Server
+deb http://192.168.99.1/debian buster main contrib non-free
+deb http://192.168.99.1/debian buster main/debian-installer main contrib non-free
+deb-src http://192.168.99.1/debian buster main contrib non-free
+clean http://192.168.99.1/debian
