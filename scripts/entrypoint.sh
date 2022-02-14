@@ -1,5 +1,6 @@
 #!/bin/bash
-sync_flag="/var/spool/apt-mirror/sync"
+MIRROR_DIR="/var/spool/apt-mirror"
+sync_flag="${MIRROR_DIR}/sync"
 rm -f /etc/nginx/sites-enabled/default
 cat <<EOF > /etc/nginx/sites-enabled/default
 server {
@@ -16,7 +17,7 @@ for DIR in $(cat /etc/apt/mirror.list | egrep '^clean\s' | awk -F '//' '{print $
   SITE="$(echo ${DIR} | awk -F '/' '{print $1}')"
   NAME="$(echo ${DIR} | awk -F '/' '{print $2}')"
   echo "  location /${NAME} {" >> /etc/nginx/sites-enabled/default
-  echo "      alias /var/spool/apt-mirror/mirror/${DIR};" >> /etc/nginx/sites-enabled/default
+  echo "      alias ${MIRROR_DIR}/${DIR};" >> /etc/nginx/sites-enabled/default
   echo "      autoindex on;" >> /etc/nginx/sites-enabled/default
   echo "  }" >> /etc/nginx/sites-enabled/default
 done
@@ -25,6 +26,7 @@ cat <<EOF >> /etc/nginx/sites-enabled/default
 EOF
 nginx
 while true ; do
+  cd ${MIRROR_DIR}
   if [[ -e ${sync_flag} ]]; then
     /usr/bin/apt-mirror
     rm -f ${sync_flag}
