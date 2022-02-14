@@ -8,7 +8,8 @@ COPY scripts /var/spool/apt-mirror/
 RUN echo &&
     apt-get -q -y update &&
     apt-get -q -y full-upgrade &&
-    apt-get -q -y install apt-mirror \
+    apt-get -q -y install \
+        apt-mirror \
         wget \
         nginx \
         nano \
