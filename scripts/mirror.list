@@ -28,7 +28,7 @@ set _tilde 0
 
 
 # PXE Server
-deb http://192.168.16.4:8888/debian buster main contrib non-free
-deb http://192.168.16.4:8888/debian buster main/debian-installer main contrib non-free
-deb-src http://192.168.16.4:8888/debian buster main contrib non-free
-clean http://192.168.16.4:8888/debian
+deb http://192.168.99.1/debian buster main contrib non-free
+deb http://192.168.99.1/debian buster main/debian-installer main contrib non-free
+deb-src http://192.168.99.1/debian buster main contrib non-free
+clean http://192.168.99.1/debian
