@@ -9,7 +9,7 @@ set cleanscript  /var/spool/apt-mirror/var/clean.sh
 # set defaultarch  <running host architecture>
 set postmirror_script /var/spool/apt-mirror/var/postmirror.sh
 # set run_postmirror 0
-set nthreads 3
+set nthreads 10
 set _tilde 0
 #set limit_rate 100k   ## Per thread ##
 #

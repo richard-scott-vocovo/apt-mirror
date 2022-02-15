@@ -1,8 +1,8 @@
 #!/bin/bash
-MIRROR_DIR="/var/spool/apt-mirror"
+MIRROR_DIR="/var/spool/apt-mirror/mirror"
 sync_flag="${MIRROR_DIR}/sync"
 rm -f /etc/nginx/sites-enabled/default
-cat <<EOF > /etc/nginx/sites-enabled/default
+cat <<EOF >/etc/nginx/sites-enabled/default
 server {
   listen 80 default_server;
   server_name _;
@@ -13,20 +13,19 @@ server {
   server_name_in_redirect off;
 
 EOF
-for DIR in $(cat /etc/apt/mirror.list | egrep '^clean\s' | awk -F '//' '{print $2}') ; do
+for DIR in $(cat /etc/apt/mirror.list | egrep '^clean\s' | awk -F '//' '{print $2}'); do
   SITE="$(echo ${DIR} | awk -F '/' '{print $1}')"
   NAME="$(echo ${DIR} | awk -F '/' '{print $2}')"
-  echo "  location /${NAME} {" >> /etc/nginx/sites-enabled/default
-  echo "      alias ${MIRROR_DIR}/${DIR};" >> /etc/nginx/sites-enabled/default
-  echo "      autoindex on;" >> /etc/nginx/sites-enabled/default
-  echo "  }" >> /etc/nginx/sites-enabled/default
+  echo "  location /${NAME} {" >>/etc/nginx/sites-enabled/default
+  echo "      alias ${MIRROR_DIR}/${DIR};" >>/etc/nginx/sites-enabled/default
+  echo "      autoindex on;" >>/etc/nginx/sites-enabled/default
+  echo "  }" >>/etc/nginx/sites-enabled/default
 done
-cat <<EOF >> /etc/nginx/sites-enabled/default
+cat <<EOF >>/etc/nginx/sites-enabled/default
 }
 EOF
 nginx
-while true ; do
-  cd ${MIRROR_DIR}
+while true; do
   if [[ -e ${sync_flag} ]]; then
     /usr/bin/apt-mirror
     rm -f ${sync_flag}
