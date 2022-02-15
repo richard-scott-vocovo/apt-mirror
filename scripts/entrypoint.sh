@@ -17,7 +17,7 @@ for DIR in $(cat /etc/apt/mirror.list | egrep '^clean\s' | awk -F '//' '{print $
   SITE="$(echo ${DIR} | awk -F '/' '{print $1}')"
   NAME="$(echo ${DIR} | awk -F '/' '{print $2}')"
   echo "  location /${NAME} {" >>/etc/nginx/sites-enabled/default
-  echo "      alias ${MIRROR_DIR}/${DIR};" >>/etc/nginx/sites-enabled/default
+  echo "      root ${MIRROR_DIR}/${SITE};" >>/etc/nginx/sites-enabled/default
   echo "      autoindex on;" >>/etc/nginx/sites-enabled/default
   echo "  }" >>/etc/nginx/sites-enabled/default
 done
