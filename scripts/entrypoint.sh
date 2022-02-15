@@ -1,6 +1,6 @@
 #!/bin/bash
 MIRROR_DIR="/var/spool/apt-mirror/mirror"
-sync_flag="${MIRROR_DIR}/sync"
+sync_flag="$(dirname ${MIRROR_DIR})/sync"
 rm -f /etc/nginx/sites-enabled/default
 cat <<EOF >/etc/nginx/sites-enabled/default
 server {
