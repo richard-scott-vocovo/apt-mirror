@@ -5,7 +5,6 @@ rm -f /etc/nginx/sites-enabled/default
 cat <<EOF >/etc/nginx/sites-enabled/default
 server {
   listen ${EXPOSED_PORT} default_server;
-  server_name _;
 
   access_log /dev/stdout;
   error_log  /dev/stdout;
