@@ -2,8 +2,8 @@
 cd $(dirname ${0})/..
 CONTAINER_NAME="$(basename ${PWD})"
 if [[ -n "${@}" ]]; then
-  CMD="-c ${@}"
+  CMD="${@}"
 else
-  CMD="--login"
+  CMD="bash --login"
 fi
-docker exec -it ${CONTAINER_NAME} bash ${CMD}
+docker exec -it ${CONTAINER_NAME} ${CMD}
