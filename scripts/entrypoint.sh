@@ -4,7 +4,7 @@ sync_flag="$(dirname ${MIRROR_DIR})/sync"
 rm -f /etc/nginx/sites-enabled/default
 cat <<EOF >/etc/nginx/sites-enabled/default
 server {
-  listen 80 default_server;
+  listen ${EXPOSED_PORT} default_server;
   server_name _;
 
   access_log /dev/stdout;
