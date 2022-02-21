@@ -20,4 +20,4 @@ docker run -d -it \
   --restart unless-stopped \
   -p ${EXPOSED_PORT}:${EXPOSED_PORT} \
   --env EXPOSED_PORT=${EXPOSED_PORT} \
-  ${CONTAINER_NAME}
+  ${CONTAINER_NAME} || exit 1
