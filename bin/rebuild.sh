@@ -21,3 +21,5 @@ docker run -d -it \
   -p ${EXPOSED_PORT}:${EXPOSED_PORT} \
   --env EXPOSED_PORT=${EXPOSED_PORT} \
   ${CONTAINER_NAME} || exit 1
+
+exit 0
